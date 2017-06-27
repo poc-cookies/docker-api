@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/poc-cookies/docker-api/issues"
   },
-  "homepage": "https://github.com/poc-cookies/docker-api#readme"
+  "homepage": "https://github.com/poc-cookies/docker-api#readme",
+  "dependencies": {
+    "hapi": "^16.4.3"
+  }
 }
