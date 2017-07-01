@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/poc-cookies/docker-api#readme",
   "dependencies": {
-    "hapi": "^16.4.3"
+    "hapi": "^16.4.3",
+    "ws": "^3.0.0"
   }
 }
