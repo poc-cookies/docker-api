@@ -2,6 +2,8 @@
 
 const Hapi = require('hapi');
 
+const whiteOrigins = ['http://localhost:8080'];
+
 const server = new Hapi.Server();
 
 server.connection({
@@ -12,6 +14,11 @@ server.route([
   {
     method: 'GET',
     path: '/api/items',
+    config: {
+      cors: {
+        origin: whiteOrigins
+      }
+    },
     handler: (request, reply) => {
       return reply('Get items');
     }
@@ -19,6 +26,11 @@ server.route([
   {
     method: 'GET',
     path: '/api/items/{id}',
+    config: {
+      cors: {
+        origin: whiteOrigins
+      }
+    },
     handler: (request, reply) => {
       return reply('Get item with given id: ' + request.params.id);
     }
@@ -28,6 +40,11 @@ server.route([
 server.route({
   method: 'POST',
   path: '/api/items',
+  config: {
+    cors: {
+      origin: whiteOrigins
+    }
+  },
   handler: (request, reply) => {
     return reply('Post item');
   }
@@ -36,6 +53,11 @@ server.route({
 server.route({
   method: 'PUT',
   path: '/api/items/{id}',
+  config: {
+    cors: {
+      origin: whiteOrigins
+    }
+  },
   handler: (request, reply) => {
     return reply('Put item with given id: ' + request.params.id);
   }
@@ -44,6 +66,11 @@ server.route({
 server.route({
   method: 'DELETE',
   path: '/api/items/{id}',
+  config: {
+    cors: {
+      origin: whiteOrigins
+    }
+  },
   handler: (request, reply) => {
     return reply('Delete item with given id: ' + request.params.id);
   }
@@ -52,6 +79,11 @@ server.route({
 server.route({
   method: 'GET',
   path: '/',
+  config: {
+    cors: {
+      origin: ['*']
+    }
+  },
   handler: (request, reply) => {
     return reply('Non-existing page...');
   }
