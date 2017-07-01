@@ -20,7 +20,19 @@ server.route([
       }
     },
     handler: (request, reply) => {
-      return reply('Get items');
+
+      let items = [{
+        id: '00000001',
+        name: 'Item 1'
+      }, {
+        id: '00000002',
+        name: 'Item 2'
+      }, {
+        id: '00000003',
+        name: 'Item 3'
+      }];
+
+      return reply(items);
     }
   },
   {
@@ -32,7 +44,10 @@ server.route([
       }
     },
     handler: (request, reply) => {
-      return reply('Get item with given id: ' + request.params.id);
+      return reply({
+        id: request.params.id,
+        name: 'Item ' + request.params.id
+      });
     }
   }
 ]);
