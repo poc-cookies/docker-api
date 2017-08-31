@@ -3,7 +3,7 @@
 const Hapi = require('hapi');
 const WebSocket = require('ws');
 
-const whiteOrigins = ['http://localhost:8080'];
+const whiteOrigins = ['*'];
 
 const server = new Hapi.Server();
 
